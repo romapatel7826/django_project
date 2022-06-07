@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}contact{% endblock title %}
+{% block body %}
+<div class="container-fluid px-0 mb-4">
+    <img src="https://www.theclimategroup.org/sites/default/files/styles/hero_header/public/2020-11/contact%20us.jpg?itok=3cmG-DGM" class="d-block w-100 mx-0" alt="...">
+</div>
+<div class="container py-4">
+    <h1 class="text-center ">Contact Us</h1>
+    <form method="post" action="/contact">
+    {% csrf_token %}
+        <div class="mb-3">
+          <label for="name">Name</label>
+          <input type="Name" class="form-control" id="Name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="mb-3">
+          <label for="Email">Email Address</label>
+          <input type="Email" class="form-control" id="Email" name="Email" placeholder="Enter your Email">
+        </div>
+        <div class="mb-3">
+            <label for="phone">Phone</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+          </div>
+        <div class="form-group mb-3">
+          <label for="desc">Tell me baout what you want</label>
+          <textarea class="form-control" id="desc" row="3" name="desc"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form> 
+</div>
+{% endblock body %}
